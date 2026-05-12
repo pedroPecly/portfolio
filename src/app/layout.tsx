@@ -15,8 +15,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Dev iniciante",
-  description: "Portfolio tech minimalista para dev frontend iniciante.",
+  title: "Portfolio | Pedro Pecly",
+  description: "Portfolio tech.",
 };
 
 export default function RootLayout({

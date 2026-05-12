@@ -134,7 +134,7 @@ export default function Home() {
               download="Pedro-Henrique-Pecly-Gomes-CV.pdf"
               className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-paper shadow-[0_18px_40px_-22px_rgba(15,23,42,0.6)]"
             >
-              Baixar CV
+              DOWNLOAD CV
             </a>
             <a
               href="#contato"
