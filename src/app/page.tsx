@@ -192,8 +192,9 @@ export default function Home() {
             {projects.map((project) => (
               <article
                 key={project.name}
-                className="flex h-full flex-col gap-3 rounded-3xl border border-outline/70 bg-card/80 p-6"
+                className="group relative flex h-full flex-col gap-3 rounded-3xl border border-outline/70 bg-card/80 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_24px_60px_-40px_rgba(56,189,248,0.6)]"
               >
+                <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_55%)]" />
                 <h3 className="text-xl font-serif text-ink">
                   {project.name}
                 </h3>
@@ -256,12 +257,40 @@ export default function Home() {
                 Formulario demonstrativo. Conecte a um servico quando quiser.
               </p>
             </form>
-            <div className="mt-4 grid gap-2 text-xs text-muted">
-              <p>Email: pedrohpg23@hotmail.com</p>
-              <p>Telefone: (22) 99600-3545</p>
+            <div className="mt-6 grid gap-3">
+              <a
+                href="https://linkedin.com/in/pedro-henrique-pecly-gomes-096277308"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-outline/70 bg-card/80 px-4 py-3 transition-colors hover:border-accent/50"
+                aria-label="LinkedIn de Pedro Henrique Pecly Gomes"
+              >
+                <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.3em] text-muted">
+                  LinkedIn
+                </p>
+                <p className="mt-1 text-sm font-semibold text-ink break-all">
+                  linkedin.com/in/pedro-henrique-pecly-gomes-096277308
+                </p>
+              </a>
+              <a
+                href="https://github.com/pedroPecly"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-outline/70 bg-card/80 px-4 py-3 transition-colors hover:border-accent/50"
+                aria-label="GitHub de Pedro Henrique Pecly Gomes"
+              >
+                <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.3em] text-muted">
+                  GitHub
+                </p>
+                <p className="mt-1 text-sm font-semibold text-ink break-all">
+                  github.com/pedroPecly
+                </p>
+              </a>
+            </div>
+            <div className="mt-4 grid gap-1 text-xs text-muted">
+              <a href="mailto:pedrohpg23@hotmail.com">Email: pedrohpg23@hotmail.com</a>
+              <a href="tel:+5522996003545">Telefone: (22) 99600-3545</a>
               <p>Endereco: Rua Maria Ortega Arrabal, 291 - Bairro Aeroporto - Itaperuna</p>
-              <p>LinkedIn: linkedin.com/in/pedro-henrique-pecly-gomes-096277308</p>
-              <p>GitHub: github.com/pedroPecly</p>
             </div>
           </div>
         </section>
