@@ -65,11 +65,19 @@ export const projects = [
       "Projeto de inovacao em saude preventiva com plataforma gamificada e foco em engajamento.",
     stack:
       "React Native (Expo) • TypeScript • Node.js • Prisma • PostgreSQL • REST API",
+    githubUrl: "https://github.com/pedroPecly/FiQuestLife",
   },
   {
-    name: "Bot TI pra mexer no NTISS",
-    description: "colocar coisa auqi",
-    stack: "python",
+    name: "Autotiss",
+    description: "Bot desenvolvido para automatizar processos manuais de cadastro de usuarios e vinculacoes de prestadores na plataforma NTISS",
+    stack: "python • Selenium",
+    githubUrl: "https://github.com/pedroPecly/autotiss",
+  },
+  {
+    name: "Plano de ensino",
+    description: "Sistema web para criação, gerenciamento e exportação de Planos de Ensino por professores de instituições de ensino superior",
+    stack: "React • TypeScript • Vite • Tailwind CSS • Supabase",
+    githubUrl: "https://github.com/pedroPecly/projetoPlanoEnsino",
   },
 ];
 
