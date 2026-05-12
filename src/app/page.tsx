@@ -77,7 +77,7 @@ export default function Home() {
 
       <header className="sticky top-4 z-20 px-6">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border border-outline/70 bg-card/80 px-4 py-2 backdrop-blur">
-          <nav className="hidden items-center gap-6 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-muted md:flex">
+          <nav className="flex min-w-0 flex-1 flex-wrap items-center justify-center gap-3 text-[10px] font-mono font-semibold uppercase tracking-[0.12em] text-muted md:flex-nowrap md:justify-start md:gap-6 md:text-xs md:tracking-[0.2em]">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -109,11 +109,11 @@ export default function Home() {
             <p className="max-w-2xl text-base text-muted sm:text-lg animate-[fade-up_0.7s_ease-out] [animation-delay:200ms] [animation-fill-mode:both]">
               Desenvolvedor Full Stack com experiencia em suporte tecnico e administracao de sistemas na area da saude, com foco em ReactJS, JavaScript, Java e C#.
             </p>
-            <div className="flex flex-wrap gap-3 animate-[fade-up_0.7s_ease-out] [animation-delay:280ms] [animation-fill-mode:both]">
+            <div className="grid grid-cols-2 gap-2 animate-[fade-up_0.7s_ease-out] [animation-delay:280ms] [animation-fill-mode:both] sm:flex sm:flex-wrap sm:gap-3">
               <a
                 href="/cv.pdf"
                 download="Pedro-Henrique-Pecly-Gomes-CV.pdf"
-                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-paper shadow-[0_18px_40px_-22px_rgba(15,23,42,0.6)]"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-ink px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-paper shadow-[0_18px_40px_-22px_rgba(15,23,42,0.6)] sm:px-6 sm:text-xs sm:tracking-[0.3em]"
               >
                 <svg
                   aria-hidden="true"
@@ -133,7 +133,7 @@ export default function Home() {
               </a>
               <a
                 href="#contato"
-                className="inline-flex items-center gap-2 rounded-full border border-outline/70 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition-colors hover:border-ink/40"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-outline/70 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink transition-colors hover:border-ink/40 sm:px-6 sm:text-xs sm:tracking-[0.3em]"
               >
                 <svg
                   aria-hidden="true"
