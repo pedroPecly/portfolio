@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio React (Next.js)
 
-## Getting Started
+Portfolio responsivo em Next.js (App Router) com Tailwind CSS e layout pronto para personalizacao.
 
-First, run the development server:
+## Como rodar
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Instale dependencias: `npm install`
+2. Inicie o servidor: `npm run dev`
+3. Abra o app no navegador.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Onde editar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app/page.tsx`: conteudo e secoes.
+- `src/app/globals.css`: cores, tipografia e animacoes.
+- `src/app/layout.tsx`: fontes e metadados.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Personalizacao rapida
 
-## Learn More
+- Troque "Seu Nome", contatos e textos de exemplo.
+- Substitua cards de projetos, experiencia e habilidades.
+- Ajuste cores em `:root` no `globals.css`.
 
-To learn more about Next.js, take a look at the following resources:
+## Observacoes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- O formulario de contato e demonstrativo; conecte a um backend ou servico quando desejar.
