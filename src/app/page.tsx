@@ -199,7 +199,7 @@ export default function Home() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-outline/70 bg-card/80 px-3 py-1 text-xs text-muted"
+                className="rounded-full border border-outline/70 bg-card/80 px-3 py-1 text-xs text-muted transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_18px_40px_-30px_rgba(56,189,248,0.6)]"
               >
                 {skill}
               </span>
