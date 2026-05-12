@@ -79,6 +79,12 @@ export const projects = [
     stack: "React • TypeScript • Vite • Tailwind CSS • Supabase",
     githubUrl: "https://github.com/pedroPecly/projetoPlanoEnsino",
   },
+  {
+    name: "Pedra Papel Tesoura",
+    description: "Uma aplicação web interativa que simula uma batalha entre Pedra, Papel e Tesoura, colidem fisicamente e se transformam de acordo com as regras do jogo.",
+    stack: "HTML • CSS • JavaScript",
+    githubUrl: "https://pedra-papel-tesoura-ashy-delta.vercel.app/index.html",
+  },
 ];
 
 export const contact = {

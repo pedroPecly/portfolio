@@ -29,7 +29,7 @@ export default function ProjectsSection() {
               {project.stack}
             </p>
             <span className="mt-auto inline-flex w-fit items-center gap-2 rounded-full border border-outline/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink transition-colors duration-300 group-hover:border-accent/60 group-hover:text-accent">
-              Ver no GitHub
+              Acessar
             </span>
           </a>
         ))}
