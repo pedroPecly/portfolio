@@ -43,6 +43,7 @@ export const about = {
 export const skills = [
   "React.js",
   "JavaScript",
+  "TypeScript",
   "Java",
   "C#",
   "PHP Laravel",
@@ -51,6 +52,7 @@ export const skills = [
   "Python",
   "React Native (Expo)",
   "Node.js",
+  "Next.js",
   "Prisma",
   "PostgreSQL",
   "Help Desk GLPI",
