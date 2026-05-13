@@ -43,9 +43,6 @@ export default function Hero() {
   return (
     <section className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="flex flex-col gap-6">
-        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-outline/70 bg-card/80 px-4 py-2 text-[11px] font-mono font-semibold uppercase tracking-[0.3em] text-muted animate-[fade-up_0.7s_ease-out] [animation-fill-mode:both]">
-          {hero.label}
-        </span>
         <h1 className="text-4xl font-serif leading-tight text-ink sm:text-5xl lg:text-6xl animate-[fade-up_0.7s_ease-out] [animation-delay:120ms] [animation-fill-mode:both]">
           {hero.heading}
         </h1>

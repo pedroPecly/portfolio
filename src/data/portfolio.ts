@@ -1,6 +1,5 @@
 export const profile = {
   name: "Pedro Henrique Pecly Gomes",
-  role: "Desenvolvedor Full Stack",
 };
 
 export const navItems = [
@@ -10,10 +9,9 @@ export const navItems = [
 ];
 
 export const hero = {
-  label: profile.role,
   heading: "Pedro Henrique Pecly Gomes.",
   summary:
-    "Desenvolvedor Full Stack com experiencia em suporte tecnico e administracao de sistemas na area da saude, com foco em ReactJS, JavaScript, Java e C#.",
+    "Desenvolvedor Full Stack com foco em ReactJS, JavaScript, Java e C#, com experiencia em suporte tecnico e administracao de sistemas em saude.",
   cv: {
     href: "/cv.pdf",
     download: "Pedro-Henrique-Pecly-Gomes-CV.pdf",
