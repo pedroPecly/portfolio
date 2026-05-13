@@ -77,7 +77,7 @@ export const projects = [
     name: "Plano de ensino",
     description: "Sistema web para criação, gerenciamento e exportação de Planos de Ensino por professores de instituições de ensino superior",
     stack: "React • TypeScript • Vite • Tailwind CSS • Supabase",
-    githubUrl: "https://github.com/pedroPecly/projetoPlanoEnsino",
+    githubUrl: "https://projeto-plano-ensino.vercel.app/",
   },
   {
     name: "Pedra Papel Tesoura",
