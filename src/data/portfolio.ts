@@ -61,17 +61,9 @@ export const skills = [
 export const projects = [
   {
     name: "FitQuestGo",
-    description:
-      "Projeto de inovacao em saude preventiva com plataforma gamificada e foco em engajamento.",
-    stack:
-      "React Native (Expo) • TypeScript • Node.js • Prisma • PostgreSQL • REST API",
+    description: "Projeto de inovacao em saude preventiva com plataforma gamificada e foco em engajamento.",
+    stack: "React Native (Expo) • TypeScript • Node.js • Prisma • PostgreSQL • REST API",
     githubUrl: "https://github.com/pedroPecly/FiQuestLife",
-  },
-  {
-    name: "Autotiss",
-    description: "Bot desenvolvido para automatizar processos manuais de cadastro de usuarios e vinculacoes de prestadores na plataforma NTISS",
-    stack: "python • Selenium",
-    githubUrl: "https://github.com/pedroPecly/autotiss",
   },
   {
     name: "Plano de ensino",
@@ -84,6 +76,18 @@ export const projects = [
     description: "Uma aplicação web interativa que simula uma batalha entre Pedra, Papel e Tesoura, colidem fisicamente e se transformam de acordo com as regras do jogo.",
     stack: "HTML • CSS • JavaScript",
     githubUrl: "https://pedra-papel-tesoura-ashy-delta.vercel.app/index.html",
+  },
+  {
+    name: "Autotiss",
+    description: "Bot desenvolvido para automatizar processos manuais de cadastro de usuarios e vinculacoes de prestadores na plataforma NTISS",
+    stack: "python • Selenium",
+    githubUrl: "https://github.com/pedroPecly/autotiss",
+  },
+    {
+    name: "Autovoxis",
+    description: "Bot de automação para formatação e carga de arquivos CSV de materiais no sistema VOXIS.",
+    stack: "python • Selenium",
+    githubUrl: "https://github.com/pedroPecly/autovoxis",
   },
 ];
 
