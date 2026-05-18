@@ -61,11 +61,21 @@ export const skills = [
 export const projects = [
   {
     name: "FitQuestGo",
-    description:
-      "Projeto de inovacao em saude preventiva com plataforma gamificada e foco em engajamento.",
-    stack:
-      "React Native (Expo) • TypeScript • Node.js • Prisma • PostgreSQL • REST API",
+    description: "Projeto de inovacao em saude preventiva com plataforma gamificada e foco em engajamento.",
+    stack: "React Native (Expo) • TypeScript • Node.js • Prisma • PostgreSQL • REST API",
     githubUrl: "https://github.com/pedroPecly/FiQuestLife",
+  },
+  {
+    name: "Plano de ensino",
+    description: "Sistema web para criação, gerenciamento e exportação de Planos de Ensino por professores de instituições de ensino superior",
+    stack: "React • TypeScript • Vite • Tailwind CSS • Supabase",
+    githubUrl: "https://projeto-plano-ensino.vercel.app/",
+  },
+  {
+    name: "Pedra Papel Tesoura",
+    description: "Uma aplicação web interativa que simula uma batalha entre Pedra, Papel e Tesoura, colidem fisicamente e se transformam de acordo com as regras do jogo.",
+    stack: "HTML • CSS • JavaScript",
+    githubUrl: "https://pedra-papel-tesoura-ashy-delta.vercel.app/index.html",
   },
   {
     name: "Autotiss",
@@ -73,17 +83,11 @@ export const projects = [
     stack: "python • Selenium",
     githubUrl: "https://github.com/pedroPecly/autotiss",
   },
-  {
-    name: "Plano de ensino",
-    description: "Sistema web para criação, gerenciamento e exportação de Planos de Ensino por professores de instituições de ensino superior",
-    stack: "React • TypeScript • Vite • Tailwind CSS • Supabase",
-    githubUrl: "https://github.com/pedroPecly/projetoPlanoEnsino",
-  },
-  {
-    name: "Pedra Papel Tesoura",
-    description: "Uma aplicação web interativa que simula uma batalha entre Pedra, Papel e Tesoura, colidem fisicamente e se transformam de acordo com as regras do jogo.",
-    stack: "HTML • CSS • JavaScript",
-    githubUrl: "https://pedra-papel-tesoura-ashy-delta.vercel.app/index.html",
+    {
+    name: "Autovoxis",
+    description: "Bot de automação para formatação e carga de arquivos CSV de materiais no sistema VOXIS.",
+    stack: "python • Selenium",
+    githubUrl: "https://github.com/pedroPecly/autovoxis",
   },
 ];
 
