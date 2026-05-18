@@ -30,12 +30,7 @@ body {
   background-color: var(--paper);
   color: var(--ink);
   font-family: var(--font-space), "Segoe UI", sans-serif;
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-  background-size: 48px 48px, 48px 48px;
-  background-position: -1px -1px, -1px -1px;
-  background-attachment: fixed;
+  background-image: none;
 }
 
 * {
