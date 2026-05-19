@@ -69,7 +69,6 @@ export const skills = [
   "PostgreSQL",
   "Help Desk GLPI",
   "Pacote Office",
-  "Ingles intermediario",
 ];
 
 export const projects = [
