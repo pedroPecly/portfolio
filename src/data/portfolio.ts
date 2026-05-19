@@ -34,7 +34,21 @@ export const about = {
   paragraphs: [
     "Profissional em TI com experiencia em suporte tecnico e administracao de sistemas na area da saude de grande porte.",
     "Experiencia pratica em consultas e relatorios em PL/SQL, alem de desenvolvimento full stack com foco em ReactJS.",
-    "Formacao: Bacharelado em Sistemas de Informacao (IFF, 2021 - 2026). Cursos: PHP, JavaScript, Logica de Programacao e Docker.",
+  ],
+};
+
+export const education = {
+  kicker: "Formacao",
+  title: "Formacao academica.",
+  items: [
+    {
+      title: "Bacharelado em Sistemas de Informacao",
+      meta: "IFF · 2021 - 2026",
+    },
+    {
+      title: "Cursos complementares",
+      meta: "PHP · JavaScript · Logica de Programacao · Docker",
+    },
   ],
 };
 
