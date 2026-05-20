@@ -46,6 +46,12 @@ Portfolio pessoal em Next.js (App Router) com layout em secoes e conteudo centra
 - `npm run start`: inicia o servidor de producao
 - `npm run lint`: lint do projeto
 
+## Formulario de contato
+
+O endpoint do formulario esta em [src/app/api/contact/route.ts](src/app/api/contact/route.ts) e envia emails via Resend.
+Defina as variaveis de ambiente listadas em [.env.example](.env.example) no seu ambiente local e na Vercel.
+O formulario usa Cloudflare Turnstile como protecao anti-spam.
+
 ## Observacoes
 
-- O formulario de contato e demonstrativo; conecte a um backend ou servico quando desejar.
+- O formulario envia emails via Resend quando as variaveis de ambiente estao configuradas.

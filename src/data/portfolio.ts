@@ -116,7 +116,7 @@ export const contact = {
     emailPlaceholder: "voce@empresa.com",
     messagePlaceholder: "Conte sobre a vaga ou projeto",
     buttonLabel: "Enviar mensagem",
-    note: "Formulario demonstrativo. Conecte a um servico quando quiser.",
+    note: "Envio direto para meu email principal.",
   },
   links: [
     {
