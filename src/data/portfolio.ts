@@ -96,11 +96,17 @@ export const projects = [
     stack: "python • Selenium",
     githubUrl: "https://github.com/pedroPecly/autotiss",
   },
-    {
+  {
     name: "Autovoxis",
     description: "Bot de automação para formatação e carga de arquivos CSV de materiais no sistema VOXIS.",
     stack: "python • Selenium",
     githubUrl: "https://github.com/pedroPecly/autovoxis",
+  },
+    {
+    name: "site de niver",
+    description: "Site para confirmacao de presenca do meu aniversario",
+    stack: "NextJS • TypeScript • Tailwind CSS • Supabase",
+    githubUrl: "https://niver-do-pecly.vercel.app/",
   },
 ];
 
