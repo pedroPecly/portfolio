@@ -385,8 +385,8 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
       summary:
         "Full Stack Developer focused on ReactJS, JavaScript, Java, and C#, with experience in technical support and healthcare systems administration.",
       cv: {
-        href: "/cv.pdf",
-        download: "Pedro-Henrique-Pecly-Gomes-CV.pdf",
+        href: "/cv_english.pdf",
+        download: "Pedro-Henrique-Pecly-Gomes-CV-English.pdf",
         label: "Download CV",
       },
       contactCta: {
