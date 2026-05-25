@@ -1,18 +1,82 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Script from "next/script";
 
 import SectionHeader from "@/components/SectionHeader";
-import { contact, profile } from "@/data/portfolio";
+import type { ContactContent } from "@/data/portfolio";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-export default function ContactSection() {
+type TurnstileApi = {
+  render: (
+    element: HTMLElement,
+    options: {
+      sitekey: string;
+      theme?: "light" | "dark" | "auto";
+      "response-field"?: boolean;
+      "response-field-name"?: string;
+    }
+  ) => string;
+  reset: (widgetId?: string) => void;
+  remove?: (widgetId?: string) => void;
+};
+
+type ContactSectionProps = {
+  contact: ContactContent;
+  profileName: string;
+};
+
+export default function ContactSection({
+  contact,
+  profileName,
+}: ContactSectionProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const turnstileSiteKey =
     process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+  const turnstileRef = useRef<HTMLDivElement | null>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  const renderTurnstile = useCallback(() => {
+    if (!turnstileSiteKey) {
+      return;
+    }
+
+    const turnstile = (window as Window & { turnstile?: TurnstileApi })
+      .turnstile;
+
+    if (!turnstile || !turnstileRef.current) {
+      return;
+    }
+
+    if (turnstileWidgetId.current) {
+      turnstile.reset(turnstileWidgetId.current);
+      return;
+    }
+
+    turnstileWidgetId.current = turnstile.render(turnstileRef.current, {
+      sitekey: turnstileSiteKey,
+      theme: "dark",
+      "response-field": true,
+      "response-field-name": "turnstileToken",
+    });
+  }, [turnstileSiteKey]);
+
+  useEffect(() => {
+    renderTurnstile();
+
+    return () => {
+      const turnstile = (window as Window & { turnstile?: TurnstileApi })
+        .turnstile;
+
+      if (turnstileWidgetId.current && turnstile?.remove) {
+        turnstile.remove(turnstileWidgetId.current);
+      }
+
+      turnstileWidgetId.current = null;
+    };
+  }, [renderTurnstile]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -29,18 +93,18 @@ export default function ContactSection() {
 
     if (!payload.name || !payload.email || !payload.message) {
       setStatus("error");
-      setStatusMessage("Preencha todos os campos obrigatorios.");
+      setStatusMessage(contact.form.feedback.requiredFields);
       return;
     }
 
     if (!payload.turnstileToken) {
       setStatus("error");
-      setStatusMessage("Confirme o desafio anti-spam.");
+      setStatusMessage(contact.form.feedback.turnstileMissing);
       return;
     }
 
     setStatus("loading");
-    setStatusMessage("Enviando mensagem...");
+    setStatusMessage(contact.form.feedback.sending);
 
     try {
       const response = await fetch("/api/contact", {
@@ -52,24 +116,22 @@ export default function ContactSection() {
       });
 
       if (!response.ok) {
-        const data = await response.json().catch(() => null);
         setStatus("error");
-        setStatusMessage(
-          data?.error ?? "Nao foi possivel enviar sua mensagem."
-        );
+        setStatusMessage(contact.form.feedback.submitError);
         return;
       }
 
       form.reset();
-      const turnstile = (window as Window & {
-        turnstile?: { reset: () => void };
-      }).turnstile;
-      turnstile?.reset();
+      const turnstile = (window as Window & { turnstile?: TurnstileApi })
+        .turnstile;
+      if (turnstileWidgetId.current) {
+        turnstile?.reset(turnstileWidgetId.current);
+      }
       setStatus("success");
-      setStatusMessage("Mensagem enviada com sucesso. Retornarei em breve.");
+      setStatusMessage(contact.form.feedback.success);
     } catch {
       setStatus("error");
-      setStatusMessage("Erro inesperado. Tente novamente em instantes.");
+      setStatusMessage(contact.form.feedback.unexpectedError);
     }
   };
 
@@ -86,7 +148,7 @@ export default function ContactSection() {
   return (
     <section
       className="scroll-mt-28 space-y-8 animate-[fade-up_0.7s_ease-out] [animation-delay:540ms] [animation-fill-mode:both]"
-      id="contato"
+      id={contact.id}
     >
       <SectionHeader
         kicker={contact.kicker}
@@ -97,6 +159,7 @@ export default function ContactSection() {
         src="https://challenges.cloudflare.com/turnstile/v0/api.js"
         async
         defer
+        onReady={renderTurnstile}
       />
       <div className="max-w-2xl">
         <form
@@ -153,16 +216,10 @@ export default function ContactSection() {
           </div>
           <div className="mt-5">
             {turnstileSiteKey ? (
-              <div
-                className="cf-turnstile"
-                data-sitekey={turnstileSiteKey}
-                data-theme="dark"
-                data-response-field="true"
-                data-response-field-name="turnstileToken"
-              />
+              <div ref={turnstileRef} />
             ) : (
               <p className="text-xs text-amber-400">
-                Configure NEXT_PUBLIC_TURNSTILE_SITE_KEY para ativar o anti-spam.
+                {contact.form.turnstileMissingNote}
               </p>
             )}
           </div>
@@ -171,7 +228,9 @@ export default function ContactSection() {
             type="submit"
             disabled={status === "loading"}
           >
-            {status === "loading" ? "Enviando..." : contact.form.buttonLabel}
+            {status === "loading"
+              ? contact.form.buttonLoadingLabel
+              : contact.form.buttonLabel}
           </button>
           <p
             className={`mt-3 text-xs ${feedbackClassName}`}
@@ -189,7 +248,9 @@ export default function ContactSection() {
               target="_blank"
               rel="noreferrer"
               className="rounded-2xl border border-outline/70 bg-card/80 px-4 py-3 transition-colors hover:border-accent/50"
-              aria-label={`${link.label} de ${profile.name}`}
+              aria-label={contact.linkAriaLabel
+                .replace("{label}", link.label)
+                .replace("{name}", profileName)}
             >
               <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.3em] text-muted">
                 {link.label}

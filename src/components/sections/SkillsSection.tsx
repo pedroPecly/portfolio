@@ -1,16 +1,24 @@
 import SectionHeader from "@/components/SectionHeader";
-import { skills } from "@/data/portfolio";
+import type { SkillsSectionContent } from "@/data/portfolio";
 
-export default function SkillsSection() {
+type SkillsSectionProps = {
+  section: SkillsSectionContent;
+  skills: string[];
+};
+
+export default function SkillsSection({
+  section,
+  skills,
+}: SkillsSectionProps) {
   return (
     <section
       className="scroll-mt-28 space-y-10 animate-[fade-up_0.7s_ease-out] [animation-delay:420ms] [animation-fill-mode:both]"
-      id="habilidades"
+      id={section.id}
     >
       <SectionHeader
-        kicker="Habilidades"
-        title="Principais competencias."
-        description="Tecnologias e ferramentas com foco em desenvolvimento full stack."
+        kicker={section.kicker}
+        title={section.title}
+        description={section.description}
       />
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (

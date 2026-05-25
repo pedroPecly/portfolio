@@ -1,11 +1,19 @@
 import SectionHeader from "@/components/SectionHeader";
-import { about, education } from "@/data/portfolio";
+import type { AboutContent, EducationContent } from "@/data/portfolio";
 
-export default function AboutSection() {
+type AboutSectionProps = {
+  about: AboutContent;
+  education: EducationContent;
+};
+
+export default function AboutSection({
+  about,
+  education,
+}: AboutSectionProps) {
   return (
     <section
       className="scroll-mt-28 space-y-6 animate-[fade-up_0.7s_ease-out] [animation-delay:360ms] [animation-fill-mode:both]"
-      id="sobre"
+      id={about.id}
     >
       <SectionHeader
         kicker={about.kicker}

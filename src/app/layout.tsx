@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
 import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { headers } from "next/headers";
+
+import { getLocale, localeToLang } from "@/i18n/config";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -14,19 +16,18 @@ const jetBrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Portfolio | Pedro Pecly",
-  description: "Portfolio tech.",
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerList = await headers();
+  const locale = getLocale(headerList.get("x-locale"));
+  const lang = localeToLang[locale];
+
   return (
     <html
-      lang="pt-BR"
+      lang={lang}
       className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

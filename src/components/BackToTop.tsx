@@ -2,7 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-export default function BackToTop() {
+type BackToTopProps = {
+  label: string;
+  href: string;
+};
+
+export default function BackToTop({ label, href }: BackToTopProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -20,8 +25,8 @@ export default function BackToTop() {
 
   return (
     <a
-      href="#inicio"
-      aria-label="Voltar ao topo"
+      href={href}
+      aria-label={label}
       className={`fixed bottom-6 right-6 sm:right-8 lg:right-12 z-30 inline-flex h-11 w-11 items-center justify-center rounded-full border border-accent/60 bg-ink/90 p-0 text-paper shadow-[0_22px_55px_-30px_rgba(56,189,248,0.75)] ring-1 ring-accent/40 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-accent/80 hover:shadow-[0_26px_60px_-30px_rgba(56,189,248,0.9)] overflow-hidden ${
         isVisible
           ? "opacity-100 translate-y-0"

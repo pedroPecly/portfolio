@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { hero } from "@/data/portfolio";
+import type { HeroContent } from "@/data/portfolio";
 
 function DownloadIcon() {
   return (
@@ -39,7 +39,11 @@ function MailIcon() {
   );
 }
 
-export default function Hero() {
+type HeroProps = {
+  hero: HeroContent;
+};
+
+export default function Hero({ hero }: HeroProps) {
   return (
     <section className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="flex flex-col gap-6">
