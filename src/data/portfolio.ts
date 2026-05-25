@@ -125,6 +125,7 @@ export type PortfolioContent = {
   };
   navItems: NavItem[];
   header: {
+    brandLabel: string;
     contactLabel: string;
     languageLabel: string;
     languageAriaLabel: string;
@@ -162,6 +163,7 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
       { label: "Projetos", href: "#projetos" },
     ],
     header: {
+      brandLabel: "Pecly",
       contactLabel: "Contato",
       languageLabel: "Idioma",
       languageAriaLabel: "Mudar para {language}",
@@ -372,6 +374,7 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
       { label: "Projects", href: "#projetos" },
     ],
     header: {
+      brandLabel: "Pecly",
       contactLabel: "Contact",
       languageLabel: "Language",
       languageAriaLabel: "Switch to {language}",

@@ -65,3 +65,49 @@ html {
     transform: translateY(-10px);
   }
 }
+
+details[data-menu] > summary + .menu-panel {
+  display: block !important;
+}
+
+details[data-menu] > .menu-panel {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 220ms ease, transform 220ms ease;
+  will-change: opacity, transform;
+}
+
+details[data-menu][open] > .menu-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+details[data-menu] .menu-icon {
+  transition: transform 200ms ease;
+}
+
+details[data-menu] .menu-bar {
+  transition: transform 200ms ease, opacity 200ms ease;
+  transform-origin: center;
+}
+
+details[data-menu][open] .menu-bar:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+details[data-menu][open] .menu-bar:nth-child(2) {
+  opacity: 0;
+}
+
+details[data-menu][open] .menu-bar:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details[data-menu] > .menu-panel {
+    transition: none;
+  }
+}

@@ -49,6 +49,8 @@ export default async function Home({ params }: PageProps) {
   return (
     <div id={content.page.topId} className="relative overflow-hidden">
       <Header
+        brandLabel={content.header.brandLabel}
+        brandHref={topHref}
         navItems={content.navItems}
         contactLabel={content.header.contactLabel}
         contactHref={`#${content.contact.id}`}
